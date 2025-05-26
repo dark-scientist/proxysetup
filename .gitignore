@@ -1,0 +1,6 @@
+# Ignore Docker system files and OS junk
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
