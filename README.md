@@ -23,7 +23,7 @@ This Nginx reverse proxy supports:
  `http://local.example.com/httpbin/` | `httpbin` container |
  `http://local.example.com/whoami/` | `whoami` container |
 
-### 🌐 Subdomain-Based Routing
+###  Subdomain-Based Routing
 
 
  `http://httpbin.local.example.com/` | `httpbin` container |
