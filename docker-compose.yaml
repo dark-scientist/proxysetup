@@ -1,4 +1,5 @@
 
+
 services:
   reverse-proxy:
     image: nginx:latest
@@ -9,13 +10,29 @@ services:
     depends_on:
       - httpbin
       - whoami
+    networks:
+      customnet:
+        ipv4_address: 172.28.0.10
 
   httpbin:
     image: kennethreitz/httpbin
     expose:
       - "80"
+    networks:
+      customnet:
+        ipv4_address: 172.28.0.11
 
   whoami:
     image: traefik/whoami
     expose:
       - "80"
+    networks:
+      customnet:
+        ipv4_address: 172.28.0.12
+
+networks:
+  customnet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16
